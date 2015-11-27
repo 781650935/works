@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="libs/traceur.js"></script>
+    <script>
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+</head>
+<body>
+<button id="btn">Iterator</button>
+</body>
+<script type="module">
+
+    //    function* gen() {
+    //        yield 1 + 2;
+    //        yield 1 + '2';
+    //    }
+    //
+    //    var t = gen();
+    //
+    //    document.getElementById('btn').addEventListener('click', function () {
+    //        console.log(t.next());
+    //    }, false);
+
+
+    //    function* f() {
+    //        for (var i = 0; i < 10; i++) {
+    //            var rest = yield  i;
+    //            if (rest) {
+    //                i = -1;
+    //            }
+    //        }
+    //    }
+    //
+    //    var g = f();
+    //
+    //    document.getElementById('btn').addEventListener('click', function () {
+    //        console.log(g.next());
+    //    }, false);
+
+    //    function* foo(x) {
+    //        var y = 2 * (yield x + 1); //next的参数会被当做上一个语句返回的值
+    //        var z = yield y / 3;
+    //        return (x + y + z);
+    //    }
+
+    //var a = foo(5);
+
+    //console.log(a.next()); //6
+    //console.log(a.next(12)); //8 上一个语句这是 yield x + 1 参数是12  yield + 1返回值就是 12 那么y就是 24了
+    //console.log(a.next(13)); //42 那么z就是13了   x是5
+
+    //    document.querySelector('#btn').addEventListener('click', function () {
+    //        console.log(a.next());
+    //    }, false);
+
+    //    for .. of
+
+    //    function* foo() {
+    //        yield 1;
+    //        yield 2;
+    //        yield 3;
+    //        yield 4;
+    //        yield 5;
+    //        yield 6;
+    //        return 7;
+    //    }
+    //
+    //    for (let v of foo()){
+    //        console.log(v);
+    //    }
+
+    //    let delegatedIterator = (function* () {
+    //        yield 'Hello!';
+    //        yield 'Bye!';
+    //    }());
+
+    //    let delegatingIterator = (function* () {
+    //        yield 'Greetings!';
+    //        yield* delegatedIterator; //yield* 语句
+    //        yield 'Ok, bye.';
+    //    }());
+
+    //    yield* 语句等于在Generator 语句内部增加了一个 for...of循环；
+    //    for (let value of delegatingIterator) {
+    //        console.log(value);
+    //    }
+
+
+    function* gen() {
+        yield* ["a", "b", "c"]; //自动遍历数组
+        yield* 'hello';
+    }
+
+    var go = gen();
+
+    document.getElementById('btn').addEventListener('click', function () {
+        console.log(go.next().value);
+    }, false);
+
+</script>
+</html>

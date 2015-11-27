@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="libs/traceur.js"></script>
+    <script>
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+</head>
+<body>
+<h1 id="message"></h1>
+</body>
+<script type="module">
+    function getPoint() {
+        var x = 1;
+        var y = 10;
+        return {x, y};
+    }
+    console.log(getPoint());
+
+
+    let propKey = 'foo';
+
+    let obj = {
+            [propKey]: true,
+            ['a' + 'bc']: 123
+    };
+
+    console.log(obj);
+</script>
+</html>

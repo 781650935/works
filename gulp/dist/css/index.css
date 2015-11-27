@@ -1,0 +1,13 @@
+/**
+ * Created by Rayr Lee on 15/10/20.
+ */
+.header {
+  width: 1000px;
+  height: 500px;
+  background: url("../img/militant-8.jpg") no-repeat 100%;
+  border: 1px solid #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}

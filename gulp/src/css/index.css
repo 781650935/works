@@ -1,0 +1,14 @@
+/**
+ * Created by Rayr Lee on 15/10/20.
+ */
+.header {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid #000;
+  background: red;
+  text-align: center;
+}
+.header img {
+  width: auto;
+  height: 100%;
+}

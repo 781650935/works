@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="libs/traceur.js"></script>
+    <script>
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+</head>
+<body>
+<button id="btn">Iterator</button>
+</body>
+<script type="module">
+    let arr = ['a', 'b', 'c'];
+    let iter = arr[Symbol.iterator]();
+
+    document.getElementById('btn').addEventListener('click', function(){
+        console.log(iter.next());
+    }, false);
+
+</script>
+</html>

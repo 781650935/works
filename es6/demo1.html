@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="libs/traceur.js"></script>
+    <script>
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+</head>
+<body>
+    <h1 id="message"></h1>
+</body>
+<script type="module">
+    let first = 'hello';
+    let last = 'world';
+    document.write(`Hello ${first} ${last}!`);
+</script>
+</html>

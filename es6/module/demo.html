@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="../libs/traceur.js"></script>
+    <script>new traceur.WebPageTranscoder(document.location.href).run();</script>
+</head>
+<body>
+<h1 id="message">test</h1>
+</body>
+<script type="module">
+
+    import {area} from 'm1.js';
+    import {firstName as test} from 'm2.js';  //将firstName命名为test
+    import add from 'm3.js'; //default 匿名模块
+    import * as circle from 'm4.js'; // 全部引用成对象
+
+    document.querySelector('#message').innerHTML = "圆面积：" + area(4);
+
+    console.log(test);
+    console.log(add(1));
+    console.log(circle.area(4), circle.circumference(4));
+
+</script>
+</html>

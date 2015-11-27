@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="libs/traceur.js"></script>
+    <script>
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+</head>
+<body>
+<h1 id="message">test</h1>
+</body>
+<script type="module">
+    let items = [
+        ["name", "张三"],
+        ["title", "Author"],
+        ["last", "二流子"]
+    ];
+    let map = new Map();
+
+    items.forEach(([key, value]) => map.set(key, value));
+
+    console.log(map.size);
+    console.log(map.has('name'));
+    console.log(map.get('name'));
+    console.log(map.set('name', '李四'));
+    //遍历键值
+    for (let key of map.keys()) {
+        console.log(key);
+    }
+    //遍历值
+    for (let value of map.values()) {
+        console.log(value);
+    }
+    //遍历所有
+    for (let [key, value] of map.entries()) {
+        console.log(key, value);
+    }
+</script>
+</html>

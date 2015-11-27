@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+    <script src="libs/traceur.js"></script>
+    <script>
+        new traceur.WebPageTranscoder(document.location.href).run();
+    </script>
+</head>
+<body>
+<h1 id="message">test</h1>
+</body>
+<script type="module">
+    //定义类
+    class Point {
+
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        };
+
+        toString() {
+            return '(' + this.x + ', ' + this.y + ')';
+        };
+
+    };
+
+    var point = new Point(2, 3);
+
+    console.log(point.toString()); // (2, 3)
+    console.log(Point.name);
+
+    class ColorPoint extends Point {
+        constructor(x, y, color) {
+            super(x, y);
+            this.color = color; // 正确
+        };
+
+        show(){
+            console.log(this.color);
+        }
+
+    }
+
+    var test = new ColorPoint(1, 2, 'bule');
+
+
+    console.log(test.toString()); // (2, 3)
+
+    test.show();
+
+    //point.hasOwnProperty('x') // true
+    //point.hasOwnProperty('y') // true
+    //point.hasOwnProperty('toString') // false
+    //point.__proto__.hasOwnProperty('toString') // true
+</script>
+</html>
