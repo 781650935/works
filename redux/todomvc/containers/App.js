@@ -24,7 +24,6 @@ App.propTypes = {
 //connect方法 将 provider中的store属性映射到组件App的'this.props'中 ,
 export default connect(
     function (state) {
-        console.log(state);
         //state来自provider组件中的store中getState();
         return {
             todos: state.todos
