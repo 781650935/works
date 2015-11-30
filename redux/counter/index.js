@@ -5,7 +5,7 @@ import App from './containers/App'
 import configureStore from './store/configureStore'
 
 const store = configureStore();
-
+//测试
 render(
     <Provider store={store}>
         <App />
