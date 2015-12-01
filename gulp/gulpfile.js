@@ -20,6 +20,12 @@ gulp.task('jshint', function () {
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'));
 });
+//JS压缩
+gulp.task('yasuo', function () {
+    return gulp.src('src/js/*')
+        .pipe($.uglify())
+        .pipe(gulp.dest('dist/js'));
+});
 //监听文件变化
 gulp.task('watch', function () {
     gulp.watch(['src/less/*'], ['less', 'reload']);

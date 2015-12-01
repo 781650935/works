@@ -4,21 +4,25 @@ import rootReducer from '../reducers';
 function logger({ getState }){
     return function (next) {
         return function (action) {
-            console.log('will dispatch', action);
-
-            // 调用 middleware 链中下一个 middleware 的 dispatch。
+            console.log('第一个中间价', action);
+            action.text = action.text + '_hello'; // 对action进行处理
             let returnValue = next(action);
-
-            console.log('state after dispatch', getState());
-
-            // 一般会是 action 本身，除非
-            // 后面的 middleware 修改了它。
             return returnValue;
         }
     }
 }
 
-let createStoreWithMiddleware = applyMiddleware(logger)(createStore);
+function logger2({ getState }){
+    return function (next) {
+        return function (action) {
+            console.log('第二个中间价', action);
+            let returnValue = next(action);
+            return returnValue;
+        }
+    }
+}
+
+let createStoreWithMiddleware = applyMiddleware(logger, logger2)(createStore);
 
 // 什么是reducers
 // 对照flux对应的demo,也就是todoStores中,

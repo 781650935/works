@@ -7,7 +7,6 @@ import configureStore from './store/configureStore'
 import 'todomvc-app-css/index.css'
 
 const store = configureStore();
-
 render(
     <Provider store={store}>
         <App />
