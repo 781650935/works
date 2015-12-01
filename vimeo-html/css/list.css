@@ -1,9 +1,0 @@
-/**
- * Created by Rayr Lee on 2015/6/19.
- */
-
-.vjs-default-skin .vjs-big-play-button {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}

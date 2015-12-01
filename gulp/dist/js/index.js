@@ -1,0 +1,1 @@
+!function(){var o=1;1==o&&console.log("1")}();
