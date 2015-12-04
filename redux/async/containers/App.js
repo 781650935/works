@@ -7,20 +7,21 @@ import Posts from '../components/Posts';
 class App extends Component {
 
     constructor(props) {
-        super(props)
-        this.handleChange = this.handleChange.bind(this)
-        this.handleRefreshClick = this.handleRefreshClick.bind(this)
+        super(props);
+        console.log(this.props);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleRefreshClick = this.handleRefreshClick.bind(this);
     }
 
     componentDidMount() {
-        const { dispatch, selectedReddit } = this.props
-        dispatch(fetchPostsIfNeeded(selectedReddit))
+        const { dispatch, selectedReddit } = this.props;
+        dispatch(fetchPostsIfNeeded(selectedReddit));
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.selectedReddit !== this.props.selectedReddit) {
-            const { dispatch, selectedReddit } = nextProps
-            dispatch(fetchPostsIfNeeded(selectedReddit))
+            const { dispatch, selectedReddit } = nextProps;
+            dispatch(fetchPostsIfNeeded(selectedReddit));
         }
     }
 
@@ -82,15 +83,9 @@ App.propTypes = {
 }
 
 function mapStateToProps(state) {
-    const { selectedReddit, postsByReddit } = state
-    const {
-        isFetching,
-        lastUpdated,
-        items: posts
-        } = postsByReddit[selectedReddit] || {
-        isFetching: true,
-        items: []
-    }
+
+    const { selectedReddit, postsByReddit } = state;
+    const { isFetching, lastUpdated, items: posts } = postsByReddit[selectedReddit] || {isFetching: true, items: []};
 
     return {
         selectedReddit,
