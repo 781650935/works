@@ -8,69 +8,48 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props);
         this.handleChange = this.handleChange.bind(this);
         this.handleRefreshClick = this.handleRefreshClick.bind(this);
-    }
+    };
 
     componentDidMount() {
         const { dispatch, selectedReddit } = this.props;
         dispatch(fetchPostsIfNeeded(selectedReddit));
-    }
+    };
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.selectedReddit !== this.props.selectedReddit) {
             const { dispatch, selectedReddit } = nextProps;
             dispatch(fetchPostsIfNeeded(selectedReddit));
         }
-    }
+    };
 
     handleChange(nextReddit) {
-        this.props.dispatch(selectReddit(nextReddit))
-    }
+        this.props.dispatch(selectReddit(nextReddit));
+    };
 
     handleRefreshClick(e) {
-        e.preventDefault()
-
-        const { dispatch, selectedReddit } = this.props
-        dispatch(invalidateReddit(selectedReddit))
-        dispatch(fetchPostsIfNeeded(selectedReddit))
-    }
+        e.preventDefault();
+        const { dispatch, selectedReddit } = this.props;
+        dispatch(invalidateReddit(selectedReddit));
+        dispatch(fetchPostsIfNeeded(selectedReddit));
+    };
 
     render() {
-        const { selectedReddit, posts, isFetching, lastUpdated } = this.props
+        const { selectedReddit, posts, isFetching, lastUpdated } = this.props;
+
         return (
             <div>
-                <Picker value={selectedReddit}
-                        onChange={this.handleChange}
-                        options={[ 'reactjs', 'frontend' ]}/>
+                <Picker value={selectedReddit} onChange={this.handleChange} options={[ 'reactjs', 'frontend' ]}/>
                 <p>
-                    {lastUpdated &&
-                    <span>
-              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-                        {' '}
-            </span>
-                    }
-                    {!isFetching &&
-                    <a href="#"
-                       onClick={this.handleRefreshClick}>
-                        Refresh
-                    </a>
-                    }
+                    {lastUpdated && <span> Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}</span> }
+                    {!isFetching && <a href="#" onClick={this.handleRefreshClick}>Refresh</a>}
                 </p>
-                {isFetching && posts.length === 0 &&
-                <h2>Loading...</h2>
-                }
-                {!isFetching && posts.length === 0 &&
-                <h2>Empty.</h2>
-                }
-                {posts.length > 0 &&
-                <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                    <Posts posts={posts}/>
-                </div>
-                }
+                {isFetching && posts.length === 0 && <h2>Loading...</h2>}
+                {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
+                {posts.length > 0 && <div style={{ opacity: isFetching ? 0.5 : 1 }}><Posts posts={posts}/></div>}
             </div>
-        )
+        );
     }
 }
 

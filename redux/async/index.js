@@ -7,11 +7,9 @@ import configureStore from './store/configureStore';
 
 const store = configureStore();
 
-console.log(store.getState());
-
 render(
     <Provider store={store}>
         <App />
     </Provider>,
     document.getElementById('root')
-)
+);
