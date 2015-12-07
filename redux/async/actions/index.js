@@ -37,28 +37,28 @@ function receivePosts(reddit, json) {
 
 function fetchPosts(reddit) {
     return dispatch => {
-        dispatch(requestPosts(reddit))
+        dispatch(requestPosts(reddit));
         return fetch(`http://www.reddit.com/r/${reddit}.json`)
             .then(response => response.json())
-            .then(json => dispatch(receivePosts(reddit, json)))
+            .then(json => dispatch(receivePosts(reddit, json)));
     }
 }
 
 function shouldFetchPosts(state, reddit) {
-    const posts = state.postsByReddit[reddit]
+    const posts = state.postsByReddit[reddit];
     if (!posts) {
-        return true
+        return true;
     }
     if (posts.isFetching) {
-        return false
+        return false;
     }
-    return posts.didInvalidate
+    return posts.didInvalidate;
 }
 
 export function fetchPostsIfNeeded(reddit) {
     return (dispatch, getState) => {
         if (shouldFetchPosts(getState(), reddit)) {
-            return dispatch(fetchPosts(reddit))
+            return dispatch(fetchPosts(reddit));
         }
     }
 }
