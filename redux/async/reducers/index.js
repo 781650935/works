@@ -22,7 +22,6 @@ function posts(state = {isFetching: false, didInvalidate: false, items: []}, act
                 isFetching: true,
                 didInvalidate: false
             });
-            console.log(_test);
             return _test;
         case RECEIVE_POSTS:
             return Object.assign({}, state, {
@@ -30,14 +29,13 @@ function posts(state = {isFetching: false, didInvalidate: false, items: []}, act
                 didInvalidate: false,
                 items: action.posts,
                 lastUpdated: action.receivedAt
-            })
+            });
         default:
             return state
     }
 };
 
 function postsByReddit(state = {}, action) {
-    console.log(state, action);
     switch (action.type) {
         case INVALIDATE_REDDIT:
         case RECEIVE_POSTS:
