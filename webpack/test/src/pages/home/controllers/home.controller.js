@@ -1,9 +1,10 @@
 'use strict';
 
 class HomeController {
-  constructor() {}
+    constructor() {
+    }
 }
 
 export default angular
-  .module('home.controller', [])
-  .controller('HomeController', HomeController);
+    .module('home.controller', [])
+    .controller('HomeController', HomeController);

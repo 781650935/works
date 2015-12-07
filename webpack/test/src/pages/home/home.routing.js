@@ -12,8 +12,8 @@ function homeRouting($urlRouterProvider, $stateProvider) {
                 loadHomeController: ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
-                            let module = require('./home');
-                            $ocLazyLoad.load({name: 'home'});
+                            let module =  require('./controllers/home.controller').name;
+                            $ocLazyLoad.load({name: 'home.controller'});
                             resolve(module.controller);
                         });
                     });
@@ -24,6 +24,17 @@ function homeRouting($urlRouterProvider, $stateProvider) {
             url: '/about',
             template: require('./views/home.about.html'),
             controller: 'HomeAboutController as vm',
+            resolve: {
+                loadHomeController: ($q, $ocLazyLoad) => {
+                    return $q((resolve) => {
+                        require.ensure([], () => {
+                            let module =  require('./controllers/home.about.controller').name;
+                            $ocLazyLoad.load({name: 'home.about.controller'});
+                            resolve(module.controller);
+                        });
+                    });
+                }
+            }
         });
 }
 
