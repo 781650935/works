@@ -1,5 +1,5 @@
 //测试
 
-import { app } from './app';
+let appModule = require('./app');
 
-angular.bootstrap(document, [app.name] , {strictDi: true});
+angular.bootstrap(document , [appModule.name], {strictDi: true});
