@@ -1,5 +1,3 @@
-'use strict';
-
 class MsgStoreService {
     constructor() {
         this._messages = [

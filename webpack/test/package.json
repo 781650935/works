@@ -23,7 +23,7 @@
         "gulp-webpack": "^1.5.0",
         "jshint": "^2.8.0",
         "jshint-stylish": "^2.1.0",
-        "ng-annotate-loader": "0.0.4",
+        "ng-annotate-loader": "^0.0.10",
         "node-libs-browser": "latest",
         "oclazyload": "^0.6.3",
         "webpack": "^1.9.11",

@@ -130,7 +130,7 @@
 	 of putting it in both: 3.bundle.js and 4.bundle.js
 	 */
 	//require('commons/msg-store').name,
-	__webpack_require__(7).name, __webpack_require__(12).name]);
+	__webpack_require__(7).name, __webpack_require__(13).name]);
 	module.exports = exports['default'];
 
 /***/ },
@@ -33559,20 +33559,43 @@
 	'use strict';
 	
 	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _homeConfig = __webpack_require__(8);
+	
+	exports['default'] = angular.module('home.routing', []).config(_homeConfig.routerConfig);
+	module.exports = exports['default'];
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by Rayr Lee on 15/12/8.
+	 */
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
-	function homeRouting($urlRouterProvider, $stateProvider) {
+	exports.routerConfig = routerConfig;
+	
+	function routerConfig($stateProvider, $urlRouterProvider) {
+	    'ngInject';
+	
 	    $urlRouterProvider.otherwise('/home');
 	
 	    $stateProvider.state('home', {
 	        url: '/home',
-	        template: __webpack_require__(8), // include small templates into routing configuration
+	        template: __webpack_require__(9), // include small templates into routing configuration
 	        controller: 'HomeController as vm',
 	        resolve: {
 	            loadHomeController: ["$q", "$ocLazyLoad", function loadHomeController($q, $ocLazyLoad) {
 	                return $q(function (resolve) {
 	                    __webpack_require__.e/* nsure */(1, function () {
-	                        var module = __webpack_require__(10).name;
+	                        var module = __webpack_require__(11).name;
 	                        $ocLazyLoad.load({ name: 'home.controller' });
 	                        resolve(module.controller);
 	                    });
@@ -33581,13 +33604,13 @@
 	        }
 	    }).state('home.about', {
 	        url: '/about',
-	        template: __webpack_require__(9),
+	        template: __webpack_require__(10),
 	        controller: 'HomeAboutController as vm',
 	        resolve: {
 	            loadHomeController: ["$q", "$ocLazyLoad", function loadHomeController($q, $ocLazyLoad) {
 	                return $q(function (resolve) {
 	                    __webpack_require__.e/* nsure */(2, function () {
-	                        var module = __webpack_require__(11).name;
+	                        var module = __webpack_require__(12).name;
 	                        $ocLazyLoad.load({ name: 'home.about.controller' });
 	                        resolve(module.controller);
 	                    });
@@ -33596,27 +33619,24 @@
 	        }
 	    });
 	}
-	homeRouting.$inject = ["$urlRouterProvider", "$stateProvider"];
-	
-	exports['default'] = angular.module('home.routing', []).config(homeRouting);
-	module.exports = exports['default'];
-
-/***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-	module.exports = "<h1>Home</h1>\n<div ui-view>Only 1.bundle.js 我是测试</div>\n"
+	routerConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
 
 /***/ },
 /* 9 */
 /***/ function(module, exports) {
 
+	module.exports = "<h1>Home</h1>\n<div ui-view>Only 1.bundle.js 我是测试</div>\n"
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
 	module.exports = "<h2>About</h2>\n<p>&hellip;still only 1.bundle.js</p>\n"
 
 /***/ },
-/* 10 */,
 /* 11 */,
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33624,16 +33644,17 @@
 	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
+	
 	function messagesRouting($stateProvider) {
 	    $stateProvider.state('messages', {
 	        url: '/messages',
-	        template: __webpack_require__(13),
+	        template: __webpack_require__(14),
 	        controller: 'MessagesController as vm',
 	        resolve: {
 	            loadMessagesController: ["$q", "$ocLazyLoad", function loadMessagesController($q, $ocLazyLoad) {
 	                return $q(function (resolve) {
 	                    __webpack_require__.e/* nsure */(3, function () {
-	                        var module = __webpack_require__(15);
+	                        var module = __webpack_require__(16);
 	                        $ocLazyLoad.load({ name: module.name });
 	                        resolve(module.controller);
 	                    });
@@ -33642,13 +33663,13 @@
 	        }
 	    }).state('messages.all', {
 	        url: '/all',
-	        template: __webpack_require__(14),
+	        template: __webpack_require__(15),
 	        controller: 'MessagesAllController as vm',
 	        resolve: {
 	            loadMessagesAllController: ["$q", "$ocLazyLoad", function loadMessagesAllController($q, $ocLazyLoad) {
 	                return $q(function (resolve) {
 	                    __webpack_require__.e/* nsure */(4, function () {
-	                        var module = __webpack_require__(16);
+	                        var module = __webpack_require__(17);
 	                        $ocLazyLoad.load({ name: module.name });
 	                        resolve(module.controller);
 	                    });
@@ -33660,7 +33681,7 @@
 	        templateProvider: ["$q", function templateProvider($q) {
 	            return $q(function (resolve) {
 	                __webpack_require__.e/* nsure */(5, function () {
-	                    return resolve(__webpack_require__(18));
+	                    return resolve(__webpack_require__(19));
 	                });
 	            });
 	        }],
@@ -33670,7 +33691,7 @@
 	                return $q(function (resolve) {
 	                    __webpack_require__.e/* nsure */(6, function () {
 	                        // load only controller module
-	                        var module = __webpack_require__(19);
+	                        var module = __webpack_require__(20);
 	                        $ocLazyLoad.load({ name: module.name });
 	                        resolve(module.controller);
 	                    });
@@ -33685,13 +33706,13 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>Messages</h1>\n<div ui-view>Only 2.bundle.js</div>"
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = "<h2>All</h2>\n<p>2.bundle.js and 3.bundle.js</p>\n<article ng-repeat=\"msg in vm.msgs\">\n    <p><strong>{{ msg.date | date: 'h:mm:ss, d MMM y' }}</strong><br/>{{ msg.text }}</p>\n</article>"

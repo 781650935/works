@@ -1,4 +1,3 @@
-'use strict';
 
 let appModule = require('../app');
 

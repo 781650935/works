@@ -1,9 +1,8 @@
-'use strict';
-
 class MessagesController {
-  constructor() {}
+    constructor() {
+    }
 }
 
 export default angular
-  .module('messages.controller', [])
-  .controller('MessagesController', MessagesController);
+    .module('messages.controller', [])
+    .controller('MessagesController', MessagesController);

@@ -1,4 +1,3 @@
-
 class MsgStoreService {
     constructor() {
         this._messages = [
