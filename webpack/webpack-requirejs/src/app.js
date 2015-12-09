@@ -5,7 +5,7 @@ $('#div1').on('click', function () {
 
     require.ensure([], () => {
 
-        var module = require('./js/child2');
+        var module = require('child2');
         $('.test-a').text(module(2));
 
     });
@@ -16,7 +16,7 @@ $('#div2').on('click', function () {
 
     require.ensure([], () => {
 
-        var module = require('./js/child1');
+        var module = require('child1');
         $('.test-a').text(module(2));
 
     });

@@ -13,6 +13,10 @@ module.exports = {
     },
     resolve: {
         root: __dirname + '/src/',
+        alias: {
+            child1: 'js/child1.js',
+            child2: 'js/child2.js'
+        }
     },
     watch: true,
     module: {
