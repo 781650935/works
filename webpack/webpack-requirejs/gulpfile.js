@@ -16,7 +16,7 @@ gulp.task('jshint', function () {
 gulp.task('webpack', function() {
     return gulp.src('src/core/bootstrap.js')
         .pipe($.webpack(require('./webpack.config.js'), webpack))
-        .pipe(gulp.dest('build/js/'));
+        .pipe(gulp.dest('build/'));
 });
 
 //监听文件变化
