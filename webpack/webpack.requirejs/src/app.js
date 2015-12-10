@@ -14,11 +14,12 @@ $('#div1').on('click', function () {
 
 $('#div2').on('click', function () {
 
-    require.ensure([], () => {
+    require.ensure(['./js/child3.js'], (require) => {
 
         var module = require('child1');
+
         $('.test-a').text(module(2));
 
-    });
+    }, 'test2015');
 
 });

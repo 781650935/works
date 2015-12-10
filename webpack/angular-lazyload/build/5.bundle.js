@@ -1,0 +1,1 @@
+webpackJsonp([5],{12:function(e,n){"use strict";function o(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(n,"__esModule",{value:!0});var t=function a(){o(this,a)};n["default"]=angular.module("messages.controller",[]).controller("MessagesController",t),e.exports=n["default"]}});

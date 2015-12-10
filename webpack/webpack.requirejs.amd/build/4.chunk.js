@@ -1,6 +1,6 @@
-webpackJsonp([1],{
+webpackJsonp([4],{
 
-/***/ 4:
+/***/ 5:
 /***/ function(module, exports) {
 
 	/**
@@ -14,7 +14,7 @@ webpackJsonp([1],{
 	});
 	
 	exports["default"] = function (num) {
-	  return 20 + num;
+	  return 10 + num;
 	};
 	
 	module.exports = exports["default"];
@@ -22,4 +22,4 @@ webpackJsonp([1],{
 /***/ }
 
 });
-//# sourceMappingURL=2a0b8fa6.chunk.js.map
+//# sourceMappingURL=4.chunk.js.map

@@ -25,16 +25,17 @@ webpackJsonp([0],[
 	
 	    __webpack_require__.e/* nsure */(1, function () {
 	
-	        var module = __webpack_require__(4);
+	        var module = __webpack_require__(16);
 	        (0, _jquery2['default'])('.test-a').text(module(2));
 	    });
 	});
 	
 	(0, _jquery2['default'])('#div2').on('click', function () {
 	
-	    __webpack_require__.e/* nsure */(2, function () {
+	    __webpack_require__.e/* nsure */(2, function (require) {
 	
-	        var module = __webpack_require__(5);
+	        var module = __webpack_require__(15);
+	
 	        (0, _jquery2['default'])('.test-a').text(module(2));
 	    });
 	});
