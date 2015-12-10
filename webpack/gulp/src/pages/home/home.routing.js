@@ -1,4 +1,3 @@
-'use strict';
 
 function homeRouting($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/home');

@@ -117,10 +117,8 @@
 	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
-	exports['default'] = __webpack_require__(3).module('lazyApp', [__webpack_require__(5),
-	
+	var app = __webpack_require__(3).module('lazyApp', [__webpack_require__(5),
 	// @It's a hack! https://github.com/ocombe/ocLazyLoad/issues/179
-	
 	(function () {
 	    __webpack_require__(6);
 	    return 'oc.lazyLoad';
@@ -131,6 +129,8 @@
 	 */
 	//require('commons/msg-store').name,
 	__webpack_require__(7).name, __webpack_require__(12).name]);
+	
+	exports['default'] = app;
 	module.exports = exports['default'];
 
 /***/ },
@@ -33561,6 +33561,7 @@
 	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
+	
 	function homeRouting($urlRouterProvider, $stateProvider) {
 	    $urlRouterProvider.otherwise('/home');
 	
