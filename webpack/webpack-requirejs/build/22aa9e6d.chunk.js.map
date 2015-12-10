@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/child1.js"],"names":[],"mappings":";;;;;;;;;;;;;;;sBAKe,UAAC,GAAG;UAAK,EAAE,GAAG,GAAG;EAAA","file":"22aa9e6d.chunk.js","sourcesContent":["/**\n * Created by Rayr Lee on 2015/12/9.\n */\n\n\nexport default (num) => 10 + num;\n\n\n/** WEBPACK FOOTER **\n ** ./src/js/child1.js\n **/"],"sourceRoot":""}

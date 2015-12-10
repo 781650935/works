@@ -9,7 +9,7 @@ module.exports = {
     output: {
         path: __dirname + '/build',
         filename: 'bundle.js',
-        chunkFilename: "[id].chunk.js"
+        chunkFilename: "[chunkhash:8].chunk.js"
     },
     resolve: {
         root: __dirname + '/src/',
