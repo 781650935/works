@@ -9,13 +9,14 @@ module.exports = {
     output: {
         path: __dirname + '/build',
         filename: 'bundle.js',
-        chunkFilename: "[name]-[chunkhash:8].chunk.js"
+        chunkFilename: "[name].chunk.js"
     },
     resolve: {
         root: __dirname + '/src/',
         alias: {
             child1: 'js/child1.js',
-            child2: 'js/child2.js'
+            child2: 'js/child2.js',
+            child3: 'js/child3.js'
         }
     },
     watch: true,

@@ -1,25 +1,21 @@
 import $ from 'jquery';
 import _ from 'underscore';
+import common from './js/common';
+
+console.log(common());
 
 $('#div1').on('click', function () {
 
-    require.ensure([], () => {
-
-        var module = require('child2');
-        $('.test-a').text(module(2));
-
+    require.ensure(['child1'], () => {
+        console.log(require('child3')(10));
     });
 
 });
 
 $('#div2').on('click', function () {
 
-    require.ensure(['./js/child3.js'], (require) => {
-
-        var module = require('child1');
-
-        $('.test-a').text(module(2));
-
-    }, 'test2015');
+    require(['child2'], (child2) => {
+        console.log(child2(10));
+    });
 
 });

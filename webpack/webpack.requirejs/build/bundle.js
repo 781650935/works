@@ -21,24 +21,47 @@ webpackJsonp([0],[
 	
 	var _underscore2 = _interopRequireDefault(_underscore);
 	
+	var _jsCommon = __webpack_require__(4);
+	
+	var _jsCommon2 = _interopRequireDefault(_jsCommon);
+	
+	console.log((0, _jsCommon2['default'])());
+	
 	(0, _jquery2['default'])('#div1').on('click', function () {
 	
 	    __webpack_require__.e/* nsure */(1, function () {
-	
-	        var module = __webpack_require__(16);
-	        (0, _jquery2['default'])('.test-a').text(module(2));
+	        console.log(__webpack_require__(6)(10));
 	    });
 	});
 	
 	(0, _jquery2['default'])('#div2').on('click', function () {
 	
-	    __webpack_require__.e/* nsure */(2, function (require) {
-	
-	        var module = __webpack_require__(15);
-	
-	        (0, _jquery2['default'])('.test-a').text(module(2));
-	    });
+	    __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(7)]; (function (child2) {
+	        console.log(child2(10));
+	    }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 	});
+
+/***/ },
+/* 2 */,
+/* 3 */,
+/* 4 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by Rayr Lee on 2015/12/10.
+	 */
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	exports['default'] = function () {
+	  return 'hello lilei!';
+	};
+	
+	module.exports = exports['default'];
 
 /***/ }
 ]);
