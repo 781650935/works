@@ -25,12 +25,13 @@ webpackJsonp([0],[
 	
 	var _jsCommon2 = _interopRequireDefault(_jsCommon);
 	
-	console.log((0, _jsCommon2['default'])());
+	console.log((0, _jsCommon2['default'])('world'));
 	
 	(0, _jquery2['default'])('#div1').on('click', function () {
 	
 	    __webpack_require__.e/* nsure */(1, function () {
-	        console.log(__webpack_require__(6)(10));
+	        console.log(__webpack_require__(6)(_jsCommon2['default'])('child3'));
+	        //console.log(require('child1')(10));
 	    });
 	});
 	
@@ -57,8 +58,8 @@ webpackJsonp([0],[
 	  value: true
 	});
 	
-	exports['default'] = function () {
-	  return 'hello lilei!';
+	exports['default'] = function (name) {
+	  return 'hello ' + name + ' !';
 	};
 	
 	module.exports = exports['default'];

@@ -2,12 +2,13 @@ import $ from 'jquery';
 import _ from 'underscore';
 import common from './js/common';
 
-console.log(common());
+console.log(common('world'));
 
 $('#div1').on('click', function () {
 
     require.ensure(['child1'], () => {
-        console.log(require('child3')(10));
+        console.log(require('child3')(common)('child3'));
+        //console.log(require('child1')(10));
     });
 
 });

@@ -3,4 +3,4 @@
  */
 
 
-export default (num) => 30 + num;
+export default ()fn => (name) => fn(name);
