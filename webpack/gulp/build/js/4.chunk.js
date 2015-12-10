@@ -1,30 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 16:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var MessagesAllController = function MessagesAllController(msgStore) {
-	    _classCallCheck(this, MessagesAllController);
-	
-	    this.msgs = msgStore.all();
-	    console.log('ok');
-	};
-	MessagesAllController.$inject = ["msgStore"];
-	
-	exports['default'] = angular.module('messages.all.controller', [__webpack_require__(17).name]).controller('MessagesAllController', MessagesAllController);
-	module.exports = exports['default'];
-
-/***/ },
-
-/***/ 17:
+/***/ 8:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -60,6 +36,30 @@ webpackJsonp([4],{
 	})();
 	
 	exports['default'] = angular.module('msg-store.service', []).service('msgStore', MsgStoreService);
+	module.exports = exports['default'];
+
+/***/ },
+
+/***/ 17:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	var MessagesAllController = function MessagesAllController(msgStore) {
+	    _classCallCheck(this, MessagesAllController);
+	
+	    this.msgs = msgStore.all();
+	    console.log('ok');
+	};
+	MessagesAllController.$inject = ["msgStore"];
+	
+	exports['default'] = angular.module('messages.all.controller', [__webpack_require__(8).name]).controller('MessagesAllController', MessagesAllController);
 	module.exports = exports['default'];
 
 /***/ }

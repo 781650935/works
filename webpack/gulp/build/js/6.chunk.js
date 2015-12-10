@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 17:
+/***/ 8:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -73,7 +73,7 @@ webpackJsonp([6],{
 	  return MessagesNewController;
 	})();
 	
-	exports['default'] = angular.module('messages.new.controller', [__webpack_require__(17).name]).controller('MessagesNewController', MessagesNewController);
+	exports['default'] = angular.module('messages.new.controller', [__webpack_require__(8).name]).controller('MessagesNewController', MessagesNewController);
 	module.exports = exports['default'];
 
 /***/ }
