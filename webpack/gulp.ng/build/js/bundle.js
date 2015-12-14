@@ -13,27 +13,35 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _angular = __webpack_require__(2);
+	var _jquery = __webpack_require__(2);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _underscore = __webpack_require__(3);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
+	var _angular = __webpack_require__(4);
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
-	var _angularUiRouter = __webpack_require__(4);
+	var _angularUiRouter = __webpack_require__(6);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 	
-	var _oclazyload = __webpack_require__(5);
+	var _oclazyload = __webpack_require__(7);
 	
 	var _oclazyload2 = _interopRequireDefault(_oclazyload);
 	
-	var _commonCommonRouter = __webpack_require__(6);
+	var _commonCommonRouter = __webpack_require__(8);
 	
 	var _commonCommonRouter2 = _interopRequireDefault(_commonCommonRouter);
 	
-	var _commonCommonService = __webpack_require__(7);
+	var _commonCommonService = __webpack_require__(15);
 	
 	var _commonCommonService2 = _interopRequireDefault(_commonCommonService);
 	
-	var _commonCommonController = __webpack_require__(8);
+	var _commonCommonController = __webpack_require__(16);
 	
 	var _commonCommonController2 = _interopRequireDefault(_commonCommonController);
 	
@@ -56,8 +64,10 @@ webpackJsonp([0],[
 /* 3 */,
 /* 4 */,
 /* 5 */,
-/* 6 */
-/***/ function(module, exports) {
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Created by Rayr Lee on 2015/12/14.
@@ -74,13 +84,69 @@ webpackJsonp([0],[
 	    'ngInject';
 	    $urlRouterProvider.otherwise('/index');
 	
+	    $stateProvider.state('index', {
+	        url: '/index',
+	        views: {
+	            main: {
+	                template: __webpack_require__(9),
+	                controller: 'IndexController as vm',
+	                resolve: {
+	                    loadIndexCtrl: ["$q", "$ocLazyLoad", function loadIndexCtrl($q, $ocLazyLoad) {
+	                        return $q(function (resolve) {
+	                            __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11), __webpack_require__(12)]; (function (module1, module2) {
+	                                $ocLazyLoad.load([module1, module2]);
+	                                resolve([module1.controller, module2.directive]);
+	                            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
+	                        });
+	                    }]
+	                }
+	            }
+	        }
+	    });
+	
+	    $stateProvider.state('person', {
+	        url: '/person',
+	        views: {
+	            main: {
+	                template: __webpack_require__(10),
+	                controller: 'PersonController as vm',
+	                resolve: {
+	                    loadIndexCtrl: ["$q", "$ocLazyLoad", function loadIndexCtrl($q, $ocLazyLoad) {
+	                        return $q(function (resolve) {
+	                            __webpack_require__.e/* require */(2, function(__webpack_require__) { /* WEBPACK VAR INJECTION */(function(module) {var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(14)]; (function (module) {
+	                                $ocLazyLoad.load({ name: module.name });
+	                                resolve(module.controller);
+	                            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));
+	/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)(module)))});
+	                        });
+	                    }]
+	                }
+	            }
+	        }
+	    });
 	    // 常见问题&帮助界面
 	}];
 	
 	module.exports = exports['default'];
 
 /***/ },
-/* 7 */
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "<h1>{{vm.title}}</h1>\n<input ng-enter=\"vm.show('test')\">"
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = "<h1>{{vm.title}}</h1>"
+
+/***/ },
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -107,7 +173,7 @@ webpackJsonp([0],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -126,7 +192,7 @@ webpackJsonp([0],[
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _commonService = __webpack_require__(7);
+	var _commonService = __webpack_require__(15);
 	
 	var _commonService2 = _interopRequireDefault(_commonService);
 	

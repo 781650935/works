@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: {
         app: ['./src/app.js'],
-        vendors: ['angular', 'angular-ui-router', 'oclazyload']
+        vendors: ['angular', 'angular-ui-router', 'oclazyload', 'underscore', 'jquery']
     },
     output: {
         path: __dirname + '/build/js',
