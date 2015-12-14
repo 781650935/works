@@ -120,6 +120,8 @@ webpackJsonp([0],[
 	    value: true
 	});
 	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
@@ -128,16 +130,32 @@ webpackJsonp([0],[
 	
 	var _commonService2 = _interopRequireDefault(_commonService);
 	
-	var Add = function Add($_test) {
-	    'ngInject';
+	var test = (function () {
+	    function test($timeout, $_test) {
+	        'ngInject';
 	
-	    _classCallCheck(this, Add);
+	        _classCallCheck(this, test);
 	
-	    this.str = $_test.add('lilei');
-	};
-	Add.$inject = ["$_test"];
+	        this.str = $_test.add('lilei');
+	        this.show($timeout);
+	    }
+	    test.$inject = ["$timeout", "$_test"];
 	
-	exports['default'] = angular.module('commonController', [_commonService2['default'].name]).controller('test', Add);
+	    _createClass(test, [{
+	        key: 'show',
+	        value: function show($timeout) {
+	            var _this = this;
+	
+	            $timeout(function () {
+	                console.log(_this.str);
+	            }, 2000);
+	        }
+	    }]);
+	
+	    return test;
+	})();
+	
+	exports['default'] = angular.module('commonController', [_commonService2['default'].name]).controller('testController', test);
 	module.exports = exports['default'];
 
 /***/ }

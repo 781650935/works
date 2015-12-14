@@ -16,7 +16,9 @@
             </ul>
         </nav>
     </header>
-    <div ng-controller="test"><span ng-bind="str"></span></div>
+    <div ng-controller="testController as vm">
+        <span ng-bind="vm.str"></span>
+    </div>
 </div>
 <script src="js/vendors.js"></script>
 <script src="js/bundle.js"></script>

@@ -4,12 +4,21 @@
 
 import commonService from './common.service';
 
-class Add() {
-    constructor($_test) {
+class test {
+
+    constructor($timeout, $_test) {
         'ngInject';
         this.str = $_test.add('lilei');
-    };
+        this.show($timeout);
+    }
+
+    show($timeout) {
+        $timeout(()=> {
+            console.log(this.str);
+        }, 2000);
+    }
+
 }
 
 export default angular.module('commonController', [commonService.name])
-    .controller('test', Add);
+    .controller('testController', test);
