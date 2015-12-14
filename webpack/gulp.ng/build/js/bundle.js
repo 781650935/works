@@ -25,18 +25,31 @@ webpackJsonp([0],[
 	
 	var _oclazyload2 = _interopRequireDefault(_oclazyload);
 	
-	var _commonsService = __webpack_require__(6);
+	var _commonCommonRouter = __webpack_require__(6);
 	
-	var _commonsService2 = _interopRequireDefault(_commonsService);
+	var _commonCommonRouter2 = _interopRequireDefault(_commonCommonRouter);
 	
-	var app = _angular2['default'].module('myApp', [_angularUiRouter2['default'], 'oc.lazyLoad', _commonsService2['default'].name]);
+	var _commonCommonService = __webpack_require__(7);
 	
-	app.controller('test', ['$scope', '$_test', function ($scope, $_test) {
+	var _commonCommonService2 = _interopRequireDefault(_commonCommonService);
 	
-	    $scope.str = $_test.add('lilei');
+	var _commonCommonController = __webpack_require__(8);
+	
+	var _commonCommonController2 = _interopRequireDefault(_commonCommonController);
+	
+	var app = _angular2['default'].module('myApp', [_angularUiRouter2['default'], 'oc.lazyLoad', _commonCommonService2['default'].name, _commonCommonController2['default'].name]);
+	
+	app.run(["$rootScope", "$state", "$stateParams", function ($rootScope, $state, $stateParams) {
+	
+	    $rootScope.$state = $state;
+	    $rootScope.$stateParams = $stateParams;
+	    $rootScope.$on('$stateChangeStart', function () {});
 	}]);
 	
-	//angular.bootstrap(document, app.name, {strictDi: true});
+	//路由器
+	app.config(_commonCommonRouter2['default']);
+	
+	_angular2['default'].bootstrap(document, [app.name], { strictDi: true });
 
 /***/ },
 /* 2 */,
@@ -44,6 +57,30 @@ webpackJsonp([0],[
 /* 4 */,
 /* 5 */,
 /* 6 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by Rayr Lee on 2015/12/14.
+	 */
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	exports['default'] = ["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+	
+	    'ngInject';
+	    $urlRouterProvider.otherwise('/index');
+	
+	    // 常见问题&帮助界面
+	}];
+	
+	module.exports = exports['default'];
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
 	/**
@@ -67,6 +104,40 @@ webpackJsonp([0],[
 	});
 	
 	exports['default'] = commonService;
+	module.exports = exports['default'];
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by Rayr Lee on 2015/12/14.
+	 */
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	var _commonService = __webpack_require__(7);
+	
+	var _commonService2 = _interopRequireDefault(_commonService);
+	
+	var Add = function Add($_test) {
+	    'ngInject';
+	
+	    _classCallCheck(this, Add);
+	
+	    this.str = $_test.add('lilei');
+	};
+	Add.$inject = ["$_test"];
+	
+	exports['default'] = angular.module('commonController', [_commonService2['default'].name]).controller('test', Add);
 	module.exports = exports['default'];
 
 /***/ }

@@ -1,15 +1,30 @@
-
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import oclazyload from 'oclazyload';
-import commonService from './commons/service';
+import commonRouter from './common/common.router';
+import commonService from './common/common.service';
+import commonController from './common/common.controller';
 
-var app = angular.module('myApp', [uiRouter, 'oc.lazyLoad', commonService.name]);
+var app = angular.module('myApp',
+    [
+        uiRouter,
+        'oc.lazyLoad',
+        commonService.name,
+        commonController.name
+    ]
+);
 
-app.controller('test', ['$scope', '$_test', ($scope, $_test) => {
+app.run(function ($rootScope, $state, $stateParams) {
 
-    $scope.str = $_test.add('lilei');
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+    $rootScope.$on('$stateChangeStart', function () {
 
-}]);
+    });
 
-//angular.bootstrap(document, app.name, {strictDi: true});
+});
+
+//路由器
+app.config(commonRouter);
+
+angular.bootstrap(document, [app.name], {strictDi: true});
