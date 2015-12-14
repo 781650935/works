@@ -79,6 +79,12 @@ webpackJsonp([0],[
 	    value: true
 	});
 	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _underscore = __webpack_require__(3);
+	
+	var _underscore2 = _interopRequireDefault(_underscore);
+	
 	exports['default'] = ["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 	
 	    'ngInject';
@@ -94,7 +100,8 @@ webpackJsonp([0],[
 	                    loadIndexCtrl: ["$q", "$ocLazyLoad", function loadIndexCtrl($q, $ocLazyLoad) {
 	                        return $q(function (resolve) {
 	                            __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11), __webpack_require__(12)]; (function (module1, module2) {
-	                                $ocLazyLoad.load([module1, module2]);
+	                                var _mdoule = _underscore2['default'].toArray(arguments);
+	                                $ocLazyLoad.load(_mdoule);
 	                                resolve([module1.controller, module2.directive]);
 	                            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 	                        });

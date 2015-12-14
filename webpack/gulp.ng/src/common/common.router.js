@@ -2,6 +2,8 @@
  * Created by Rayr Lee on 2015/12/14.
  */
 
+import _ from 'underscore';
+
 export default ($stateProvider, $urlRouterProvider) => {
 
     'ngInject';
@@ -19,7 +21,8 @@ export default ($stateProvider, $urlRouterProvider) => {
                             require(
                                 ['../pages/index/index.controller', '../pages/index/index.directive'],
                                 function (module1, module2) {
-                                    $ocLazyLoad.load([module1, module2]);
+                                    var _mdoule = _.toArray(arguments);
+                                    $ocLazyLoad.load(_mdoule);
                                     resolve([module1.controller, module2.directive]);
                                 });
                         });
