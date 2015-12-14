@@ -130,32 +130,32 @@ webpackJsonp([0],[
 	
 	var _commonService2 = _interopRequireDefault(_commonService);
 	
-	var test = (function () {
-	    function test($timeout, $_test) {
+	var Test = (function () {
+	    function Test($timeout, $_test) {
 	        'ngInject';
 	
-	        _classCallCheck(this, test);
+	        _classCallCheck(this, Test);
 	
 	        this.str = $_test.add('lilei');
-	        this.show($timeout);
+	        this.$timeout = $timeout;
 	    }
-	    test.$inject = ["$timeout", "$_test"];
+	    Test.$inject = ["$timeout", "$_test"];
 	
-	    _createClass(test, [{
+	    _createClass(Test, [{
 	        key: 'show',
-	        value: function show($timeout) {
+	        value: function show() {
 	            var _this = this;
 	
-	            $timeout(function () {
+	            this.$timeout(function () {
 	                console.log(_this.str);
 	            }, 2000);
 	        }
 	    }]);
 	
-	    return test;
+	    return Test;
 	})();
 	
-	exports['default'] = angular.module('commonController', [_commonService2['default'].name]).controller('testController', test);
+	exports['default'] = angular.module('commonController', [_commonService2['default'].name]).controller('testController', Test);
 	module.exports = exports['default'];
 
 /***/ }
