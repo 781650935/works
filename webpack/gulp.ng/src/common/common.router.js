@@ -16,15 +16,12 @@ export default ($stateProvider, $urlRouterProvider) => {
                 template: require('../pages/index/index.html'),
                 controller: 'IndexController as vm',
                 resolve: {
-                    loadIndexCtrl: ($q, $ocLazyLoad) => {
-                        return $q((resolve) => {
-                            require(
-                                ['../pages/index/index.controller', '../pages/index/index.directive'],
-                                function (module1, module2) {
-                                    var _mdoule = _.toArray(arguments);
-                                    $ocLazyLoad.load(_mdoule);
-                                    resolve([module1.controller, module2.directive]);
-                                });
+                    test: function ($ocLazyLoad) {
+                        return new Promise((resolve) => {
+                            require(['../pages/index/index.controller', '../pages/index/index.directive'], function (module1, module2) {
+                                $ocLazyLoad.load([module1, module2]);
+                                resolve(null);
+                            });
                         });
                     }
                 }

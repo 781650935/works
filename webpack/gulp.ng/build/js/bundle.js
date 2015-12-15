@@ -97,12 +97,11 @@ webpackJsonp([0],[
 	                template: __webpack_require__(9),
 	                controller: 'IndexController as vm',
 	                resolve: {
-	                    loadIndexCtrl: ["$q", "$ocLazyLoad", function loadIndexCtrl($q, $ocLazyLoad) {
-	                        return $q(function (resolve) {
+	                    test: ["$ocLazyLoad", function test($ocLazyLoad) {
+	                        return new Promise(function (resolve) {
 	                            __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(11), __webpack_require__(12)]; (function (module1, module2) {
-	                                var _mdoule = _underscore2['default'].toArray(arguments);
-	                                $ocLazyLoad.load(_mdoule);
-	                                resolve([module1.controller, module2.directive]);
+	                                $ocLazyLoad.load([module1, module2]);
+	                                resolve(null);
 	                            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 	                        });
 	                    }]
@@ -140,7 +139,7 @@ webpackJsonp([0],[
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1>{{vm.title}}</h1>\n<input ng-enter=\"vm.show('test')\">"
+	module.exports = "<h1>{{vm.title}}</h1>\r\n<input ng-enter=\"vm.show('test')\">"
 
 /***/ },
 /* 10 */
