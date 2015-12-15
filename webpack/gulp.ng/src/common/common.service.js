@@ -4,10 +4,10 @@
 
 var commonService = angular.module('commonService', []);
 
-commonService.factory('$_test', function () {
+commonService.factory('$_test', () => {
     'ngInject';
     return {
-        add: function (str) {
+        add: (str) => {
             return 'hello ' + str + ' !';
         }
     }
