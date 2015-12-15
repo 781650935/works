@@ -53,17 +53,11 @@ webpackJsonp([1],{
 	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
-	exports['default'] = angular.module('IndexDirective', []).directive('ngEnter', function () {
+	exports['default'] = angular.module('IndexDirective', []).directive('ngTest', function () {
 	    return {
 	        restrict: 'EA',
-	        link: function link(scope, ele, attr) {
-	            ele.bind('keydown keypress', function (e) {
-	                if (e.which === 13) {
-	                    scope.$apply(attr.ngEnter);
-	                    e.preventDefault();
-	                }
-	            });
-	        }
+	        replace: true,
+	        template: '<h3>{{vm.title}} 指令</h3>'
 	    };
 	});
 	module.exports = exports['default'];

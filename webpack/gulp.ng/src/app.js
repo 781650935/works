@@ -20,8 +20,8 @@ app.run(function ($rootScope, $state, $stateParams) {
 
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-    $rootScope.$on('$stateChangeStart', function () {
-
+    $rootScope.$on('$stateChangeStart', function (e) {
+        console.log(e);
     });
 
 });

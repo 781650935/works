@@ -51,7 +51,9 @@ webpackJsonp([0],[
 	
 	    $rootScope.$state = $state;
 	    $rootScope.$stateParams = $stateParams;
-	    $rootScope.$on('$stateChangeStart', function () {});
+	    $rootScope.$on('$stateChangeStart', function (e) {
+	        console.log(e);
+	    });
 	}]);
 	
 	//路由器
@@ -132,7 +134,7 @@ webpackJsonp([0],[
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1>{{vm.title}}</h1>\n<input ng-enter=\"vm.show('test')\">"
+	module.exports = "<h1>{{vm.title}}</h1>\n<div ng-test></div>"
 
 /***/ },
 /* 11 */,
