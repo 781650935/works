@@ -6,7 +6,6 @@ class IndexController {
     constructor() {
         'ngInject';
         this.title = '这是首页!';
-        this.str = '测试';
     }
 
     show (str){

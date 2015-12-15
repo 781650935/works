@@ -24,7 +24,6 @@ webpackJsonp([1],{
 	        _classCallCheck(this, IndexController);
 	
 	        this.title = '这是首页!';
-	        this.str = '测试';
 	    }
 	
 	    _createClass(IndexController, [{

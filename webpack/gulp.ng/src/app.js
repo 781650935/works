@@ -3,7 +3,7 @@ import _ from 'underscore';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import oclazyload from 'oclazyload';
-import commonRouter from './common/common.router';
+import commonRouter from './pages/router';
 import commonService from './common/common.service';
 import commonController from './common/common.controller';
 
