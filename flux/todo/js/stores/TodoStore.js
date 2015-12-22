@@ -41,7 +41,7 @@ function destroyCompleted() {
 
 var TodoStore = assign({}, EventEmitter.prototype, {
 
-    areAllComplete: function() {
+    areAllComplete: function () {
         for (var id in _todos) {
             if (!_todos[id].complete) {
                 return false;
@@ -50,24 +50,24 @@ var TodoStore = assign({}, EventEmitter.prototype, {
         return true;
     },
 
-    getAll: function() {
+    getAll: function () {
         return _todos;
     },
 
-    emitChange: function() {
+    emitChange: function () {
         this.emit(CHANGE_EVENT);
     },
 
-    addChangeListener: function(callback) {
+    addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
     },
 
-    removeChangeListener: function(callback) {
+    removeChangeListener: function (callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 });
 
-AppDispatcher.register(function(action) {
+AppDispatcher.register(function (action) {
     var text;
 
     switch (action.actionType) {
@@ -127,7 +127,7 @@ AppDispatcher.register(function(action) {
             break;
 
         default:
-            // no op
+        // no op
     }
 });
 
