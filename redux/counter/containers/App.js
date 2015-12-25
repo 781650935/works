@@ -10,7 +10,8 @@ export default connect(
         }
     },
     function (dispatch) {
-        return bindActionCreators(CounterActions, dispatch);
+        var test =  bindActionCreators(CounterActions, dispatch);
+        return test;
     }
 )(Counter);
 
