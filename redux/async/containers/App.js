@@ -62,7 +62,6 @@ App.propTypes = {
 }
 
 function mapStateToProps(state) {
-
     const { selectedReddit, postsByReddit } = state;
     const { isFetching, lastUpdated, items: posts } = postsByReddit[selectedReddit] || {isFetching: true, items: []};
 

@@ -30,7 +30,7 @@ let createStoreWithMiddleware = applyMiddleware(logger, logger2)(createStore);
 // reducer实际就是register函数内部的部分;随着业务的增加,这部分内容势必增加;
 export default function configureStore(initialState) {
     //initialState为初始化值;
-    const store = createStoreWithMiddleware(rootReducer, initialState);
+    const store = createStore(rootReducer, initialState);
     //也就是创建flux中的todoStore;
 
     if (module.hot) {
