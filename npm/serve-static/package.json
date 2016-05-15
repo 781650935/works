@@ -1,0 +1,10 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "devDependencies": {
+    "finalhandler": "^0.4.0",
+    "serve-static": "^1.10.0"
+  }
+}
