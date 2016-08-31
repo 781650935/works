@@ -20,12 +20,12 @@ app.post('/git', function (req, res) {
     res.send(200, {
         info: 'post'
     });
-    exec('/home/myapp/git.sh', function(err, stdout, stderr){
-	if(err){
-	    logger.info(err.code);
-	}else{
-	    logger.info(stdout);
-	}
+    exec('/home/myapp/git.sh', function (err, stdout, stderr) {
+        if (err) {
+            logger.info(err.code);
+        } else {
+            logger.info(stdout);
+        }
     });
 });
 

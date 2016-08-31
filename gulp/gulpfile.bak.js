@@ -1,4 +1,3 @@
-
 var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     gulpif = require('gulp-if'),
@@ -49,7 +48,7 @@ gulp.task('revImg', function () {
 //检测JS
 gulp.task('lintJs', function () {
     return gulp.src(jsSrc)
-        //.pipe(jscs())   //检测JS风格
+    //.pipe(jscs())   //检测JS风格
         .pipe(jshint({
             "undef": false,
             "unused": false
