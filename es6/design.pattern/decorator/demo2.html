@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    Function.prototype.before = function (beforeFn) {
+        var that = this;  //that 指向原函数 例如:getElementById
+        return function () {
+            beforeFn.apply(this, arguments);  //这里的this指向document 保证里this不会被劫持,会在新函数之前执行
+            return that.apply(this, arguments);
+        };
+    };
+
+    var func = function (param) {
+        console.log(param);
+    };
+
+    var fixFunc = function (param) {
+        param.b = '测试';
+        param.c = '我们';
+    }
+
+    console.log(func);
+
+    func = func.before(fixFunc);
+
+    //console.log(func);
+
+    func({a: 'a', b: 'bb'});
+</script>
+</html>
